@@ -3,8 +3,8 @@
 
     <item
         android:id="@+id/nav_home"
-        android:icon="@drawable/baseline_home_24"
-        android:title="Home"/>
+        android:icon="@drawable/baseline_work_outline_24"
+        android:title="Projects"/>
 
     <item
         android:id="@+id/nav_tasks"
@@ -17,5 +17,42 @@
         android:id="@+id/nav_add"
         android:icon="@drawable/baseline_add_circle_outline_24"
         android:title="Add Task"/>
+
+
+    <item
+        android:id="@+id/documents"
+        android:icon="@drawable/baseline_insert_drive_file_24"
+        android:title="Documents"/>
+
+    <item
+        android:id="@+id/calender"
+        android:icon="@drawable/baseline_calendar_month_24"
+        android:title="Calender"/>
+
+    <item
+        android:title="Support">
+
+        <menu>
+
+        <item
+            android:id="@+id/open_ticket"
+            android:icon="@drawable/baseline_support_agent_24"
+            android:title="Open New Ticket"/>
+
+            <item
+                android:id="@+id/tickets"
+                android:icon="@drawable/baseline_call_to_action_24"
+                android:title="Tickets"/>
+
+            <item
+                android:id="@+id/replies"
+                android:icon="@drawable/baseline_quickreply_24"
+                android:title="Predefined Replies"/>
+
+        </menu>
+
+    </item>
+
+
 
 </menu>

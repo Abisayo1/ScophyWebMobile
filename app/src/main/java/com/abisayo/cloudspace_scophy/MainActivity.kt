@@ -2,17 +2,11 @@ package com.abisayo.cloudspace_scophy
 
 import android.os.Bundle
 import android.view.MenuItem
-import android.webkit.WebView
-import android.webkit.WebViewClient
-import android.widget.Toast
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.core.view.GravityCompat
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
 import com.google.android.material.navigation.NavigationView
@@ -55,6 +49,46 @@ class MainActivity : AppCompatActivity() {
                     setToolbarTitle("Tasks")
 
                     changeFragment(TasksFragment())
+                }
+            }
+
+            when(it.itemId){
+                R.id.documents -> {
+                    setToolbarTitle("Documents")
+
+                    changeFragment(Documents())
+                }
+            }
+
+            when(it.itemId){
+                R.id.tickets -> {
+                    setToolbarTitle("Tickets")
+
+                    changeFragment(Tickets())
+                }
+            }
+
+            when(it.itemId){
+                R.id.open_ticket -> {
+                    setToolbarTitle("Open New Ticket")
+
+                    changeFragment(OpenNewTicket())
+                }
+            }
+
+            when(it.itemId){
+                R.id.replies -> {
+                    setToolbarTitle("Predefined Replies")
+
+                    changeFragment(PredefinedReplies())
+                }
+            }
+
+            when(it.itemId){
+                R.id.calender -> {
+                    setToolbarTitle("Calender")
+
+                    changeFragment(Calender())
                 }
             }
             true
