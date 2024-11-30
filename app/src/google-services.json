@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "754384028499",
+    "project_id": "scophyweb-83497",
+    "storage_bucket": "scophyweb-83497.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:754384028499:android:c7e1a3abdaac502ec517a6",
+        "android_client_info": {
+          "package_name": "com.abisayo.cloudspace_scophy"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCE4m7756Nnq528OT9Y3HULWYW1Mnrexow"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
