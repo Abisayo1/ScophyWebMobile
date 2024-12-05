@@ -7,6 +7,7 @@ import android.util.Patterns
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.abisayo.cloudspace_scophy.databinding.ActivitySignInBinding
@@ -14,15 +15,21 @@ import com.google.firebase.Firebase
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.auth
 
-class SignInActivity : BaseActivity() {
+class SignInActivity : AppCompatActivity() {
     private var binding:ActivitySignInBinding? = null
     private lateinit var auth: FirebaseAuth
     override fun onCreate(savedInstanceState: Bundle?) {
+        Thread.sleep(3000)
+        installSplashScreen()
         super.onCreate(savedInstanceState)
-        binding = ActivitySignInBinding.inflate(layoutInflater)
-        setContentView(binding?.root)
 
         auth = Firebase.auth
+        if (auth.currentUser != null) {
+            startActivity(Intent(this, LauncherActivity::class.java))
+        }
+
+        binding = ActivitySignInBinding.inflate(layoutInflater)
+        setContentView(binding?.root)
 
         binding?.tvRegister?.setOnClickListener {
             startActivity(Intent(this,SignUpActivity::class.java))
@@ -46,12 +53,12 @@ class SignInActivity : BaseActivity() {
         val password = binding?.etSinInPassword?.text.toString()
         if (validateForm(email, password))
         {
-            showProgressBar()
+
             auth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this){task->
                     if (task.isSuccessful)
                     {
-                        startActivity(Intent(this,MemberDashboardActivity::class.java))
+                        startActivity(Intent(this,LauncherActivity::class.java))
                         finish()
                     }
                     else
@@ -59,7 +66,7 @@ class SignInActivity : BaseActivity() {
                         binding?.btnSignIn?.text = "Login"
                         Toast.makeText(this,"Oops! Something went wrong", Toast.LENGTH_SHORT).show()
                     }
-                    hideProgressBar()
+
                 }
         }
     }

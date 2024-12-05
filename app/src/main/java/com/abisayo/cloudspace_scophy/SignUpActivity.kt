@@ -66,7 +66,7 @@ class SignUpActivity : BaseActivity() {
                     if (task.isSuccessful) {
                         showToast(this, "User Id created Successfully")
                         hideProgressBar()
-                        startActivity(Intent(this,MemberDashboardActivity::class.java))
+                        startActivity(Intent(this,LauncherActivity::class.java))
                         finish()
                     } else {
                         showToast(this, "User ID not created")
